@@ -1,0 +1,2 @@
+xclip -selection clipboard -o | awk -F $'\t' '{ print "* @property "$2, "$"$1, $3 }' |  xclip -selection clipboard
+

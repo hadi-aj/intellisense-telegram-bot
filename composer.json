@@ -1,0 +1,19 @@
+{
+    "name": "hadi-aj/intellisense-telegram-bot",
+    "description": "A Telegram Bot Package compatible with PHP IDE",
+    "require": {
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HadiAj\\IntelliSenseTelegramBot\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hadi Alizadeh Jalali",
+            "email": "hadi.alizadeh.jalali@gmail.com"
+        }
+    ]
+}
