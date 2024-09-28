@@ -2,12 +2,13 @@
 
 namespace HadiAj\IntelliSenseTelegramBot;
 
-use app\modules\telegram\types\KeyboardButton;
+use HadiAj\IntelliSenseTelegramBot\types\KeyboardButton;
+use HadiAj\IntelliSenseTelegramBot\types\ReplyKeyboardMarkup;
 
 /**
  * @author Hadi Alizadeh Jalali <hadi.alizadeh.jalali@gmail.com>
  */
-class Keyboard extends types\ReplyKeyboardMarkup {
+class Keyboard extends ReplyKeyboardMarkup {
 
     /**
      * 

@@ -2,12 +2,10 @@
 
 namespace HadiAj\IntelliSenseTelegramBot;
 
-use app\modules\telegram\types\InputMedia;
-use app\modules\telegram\types\Response;
-use app\modules\telegram\types\Update;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Stream;
+use HadiAj\IntelliSenseTelegramBot\types\Update;
 
 /**
  * @author Hadi Alizadeh Jalali <hadi.alizadeh.jalali@gmail.com>

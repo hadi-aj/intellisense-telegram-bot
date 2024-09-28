@@ -2,7 +2,7 @@
 
 namespace HadiAj\IntelliSenseTelegramBot;
 
-use app\modules\telegram\types\InlineKeyboardButton;
+use HadiAj\IntelliSenseTelegramBot\types\InlineKeyboardButton;
 
 /**
  * @author Hadi Alizadeh Jalali <hadi.alizadeh.jalali@gmail.com>
