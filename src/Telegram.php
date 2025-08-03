@@ -206,16 +206,15 @@ class Telegram {
                 // Magical media input helper.
                 $item = $this->mediaInputHelper($item, $is_resource, $multipart);
             } else if (in_array($key, $attachments, true) && file_exists($item)) {
-                $file = fopen($item, 'rb');
+                $file = \GuzzleHttp\Psr7\Utils::tryFopen($item, 'r');
                 $is_resource |= is_resource($file);
                 $multipart[] = ['name' => $key, 'contents' => $file];
+            } else {
+                $multipart[] = ['name' => $key, 'contents' => $item];
             }
-
-
-            $multipart[] = ['name' => $key, 'contents' => $item];
         }
-        if ($is_resource) {
 
+        if ($is_resource) {
             return ['multipart' => $multipart];
         }
 
