@@ -115,7 +115,7 @@ class Telegram {
      * Token taken from botFather
      * @var string
      */
-    public $botToken;
+    private $botToken;
 
     /**
      * @var string
@@ -132,8 +132,9 @@ class Telegram {
      */
     private $_client;
 
-    public function __construct()
+    public function __construct($botToken)
     {
+        $this->botToken = $botToken;
         $this->setInput();
         $this->setClient();
     }
@@ -206,15 +207,16 @@ class Telegram {
                 // Magical media input helper.
                 $item = $this->mediaInputHelper($item, $is_resource, $multipart);
             } else if (in_array($key, $attachments, true) && file_exists($item)) {
-                $file = \GuzzleHttp\Psr7\Utils::tryFopen($item, 'r');
+                $file = fopen($item, 'rb');
                 $is_resource |= is_resource($file);
                 $multipart[] = ['name' => $key, 'contents' => $file];
-            } else {
-                $multipart[] = ['name' => $key, 'contents' => $item];
             }
-        }
 
+
+            $multipart[] = ['name' => $key, 'contents' => $item];
+        }
         if ($is_resource) {
+
             return ['multipart' => $multipart];
         }
 
