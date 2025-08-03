@@ -9,6 +9,8 @@ use HadiAj\IntelliSenseTelegramBot\types\ReplyKeyboardMarkup;
  * @author Hadi Alizadeh Jalali <hadi.alizadeh.jalali@gmail.com>
  */
 class Keyboard extends ReplyKeyboardMarkup {
+    
+    public $keyboard;
 
     /**
      * 
